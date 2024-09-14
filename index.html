@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Monitoring Platform</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #003366;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav img.logo {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px;
+            background-color: #0077b6;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Main Content */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 15px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+            color: #0077b6;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+            /*feedback */
+           .feedback-section {
+            background-color: #ffffff;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-section h2 {
+            margin-bottom: 20px;
+            color: #0077b6;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback-form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .feedback-form input,
+        .feedback-form textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .feedback-form button {
+            padding: 10px;
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .feedback-form button:hover {
+            background-color: #005f8a;
+        }
+
+        
+
+        /* Graphs and Flow Diagram Section */
+        .graph-section,
+        .flow-diagram-section {
+            margin: 40px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin: 0 15px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .social-icons {
+            display: flex;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-contact {
+            font-size: 14px;
+        }
+
+        footer p {
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#"><img
+                src="https://files.oaiusercontent.com/file-cBhGeJ7pHdWBY7ndGd0BkIS3?se=2024-09-14T14%3A29%3A02Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dadd665d0-0ab2-49f7-91a7-b2a90693c0cb.webp&sig=gQdqdJfg0oaY6EBDG/quxVruvp1UMxPMYkrxjdcsgms%3D"
+                alt="Neer Drishti Logo" class="logo"></a>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pollution">Pollution Parameters</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Neer Drishti Water Monitoring</h1>
+        <p>Real-Time AI Powered Water Body Pollution Tracking</p>
+    </header>
+
+    <!-- Main Section -->
+    <div class="container">
+        <div class="card">
+            <img src="https://cdnintech.com/media/chapter/69568/1512345123/media/F2.png" alt="Water Quality">
+            <h3>Water Quality Monitoring</h3>
+            <p>Track various water quality indicators such as pH level, dissolved oxygen, and turbidity in real-time.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1334225339/photo/the-hand-of-a-working-man-in-a-glove-holds-a-test-tube-with-a-water-sample-in-close-up.jpg?s=612x612&w=0&k=20&c=SbLkFK2sW0BP39lP65F3T3E1ZCRXQQyVpIcgMcCnmkk="
+                alt="Contaminants">
+            <h3>Contaminants</h3>
+            <p>Identify harmful contaminants including heavy metals, chemicals, and pollutants affecting water bodies.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="https://files.oaiusercontent.com/file-OyTfq7OQBaBDupVmmnhv8Nqd?se=2024-09-14T14%3A23%3A15Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dca6c3b28-5e3e-4d4b-881a-8f5f6938f745.webp&sig=z7RJ4b6dwDVWLirIgRfccVS1nkkKVtKtPR/yWj5qnIk%3D"
+                alt="Algal Blooms">
+            <h3>Algal Blooms</h3>
+            <p>Monitor for harmful algal blooms that can disrupt aquatic ecosystems and threaten water quality.</p>
+        </div>
+
+        <div class="card">
+            <img src="https://files.oaiusercontent.com/file-zf4QhnCR70j3bGqQLJHyhW3Y?se=2024-09-14T14%3A24%3A33Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Ddfa8dfc5-7b96-4ddb-923d-f035b61f2dea.webp&sig=jbazF/levwqbeAlv2qzP%2B1b%2BIjQ5S%2BLqDR4DMwDlQWo%3D"
+                alt="Water Levels">
+            <h3>Water Level Monitoring</h3>
+            <p>Keep track of changing water levels, flood risks, and dry spells that impact water bodies and ecosystems.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="https://files.oaiusercontent.com/file-fr66QQ2XZyk1wh0z0aem5FCZ?se=2024-09-14T14%3A50%3A16Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D06cc23c4-0b8c-4946-b50a-4f7664f11b4b.webp&sig=NzQHUm2stg9kaHMl3yYG%2Bl7R0GK64zmo361VUxnKLS0%3D"
+                alt="Polluted Cities">
+            <h3>Polluted Cities</h3>
+            <p>View the most polluted cities where water quality is at critical levels. Monitor their real-time
+                pollution stats, including contaminants and trends.</p>
+        </div>
+
+        <div class="card">
+            <img src="data:image/png;base64,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"
+                alt="Water Quality Graph">
+            <h3>Water Quality Trends</h3>
+            <p>Visualize trends in water quality over time. Analyze historical data and compare pollutant levels through
+                interactive graphs.</p>
+        </div>
+    </div>
+       <!-- feedback form -->
+        <div class="feedback-section" id="contact">
+            <h2>Report a Problem or Give Feedback</h2>
+            <form class="feedback-form" action="your-backend-endpoint" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+        
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        </div>
+
+             <!-- feedback form end -->
+
+    <!-- Graphs and Flow Diagram Section -->
+    <div class="graph-section">
+        <h2>Water Quality Bar Graph</h2>
+        <canvas id="barChart" width="100px" height="20px"></canvas>
+    </div>
+
+    <div class="flow-diagram-section">
+        <h2>Water Monitoring Process Flow</h2>
+        <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="20" width="120" height="60" fill="#0077b6" stroke="#005f8a" stroke-width="2" />
+            <text x="60" y="50" fill="white" font-size="14">Sensors</text>
+            <rect x="200" y="20" width="120" height="60" fill="#00b4d8" stroke="#0096c7" stroke-width="2" />
+            <text x="210" y="50" fill="white" font-size="14">Data Processing</text>
+            <rect x="350" y="20" width="120" height="60" fill="#90e0ef" stroke="#00b4d8" stroke-width="2" />
+            <text x="370" y="50" fill="black" font-size="14">Visualization</text>
+
+            <line x1="170" y1="50" x2="200" y2="50" stroke="#333" stroke-width="2" />
+            <line x1="320" y1="50" x2="350" y2="50" stroke="#333" stroke-width="2" />
+        </svg>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+            </div>
+            <div class="footer-contact">
+                <p>Email: support@neerdrishti.com | Phone: +123 456 7890</p>
+            </div>
+        </div>
+        <p>© 2024 Neer Drishti Water Monitoring Platform | All Rights Reserved</p>
+    </footer>
+
+    <!-- Chart.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('barChart').getContext('2d');
+        const barChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['pH Level', 'Dissolved Oxygen', 'Turbidity'],
+                datasets: [{
+                    label: 'Water Parameters',
+                    data: [7.2, 8.5, 3.2], // Example data
+                    backgroundColor: '#0077b6',
+                    borderColor: '#005f8a',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
